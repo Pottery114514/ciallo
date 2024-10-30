@@ -1,0 +1,29 @@
+
+【问题描述】一对兔子，从出生后第3个月起每个月都生一对兔子。小兔子长到第3个月后每个月又生一对兔子。假如兔子都不死，请问第1个月出生的一对兔子，至少需要繁衍到第几个月时兔子总数才可以达到n对？输入一个不超过10000的正整数n，输出兔子总数达到n最少需要的月数。试编写相应程序。
+
+【输入形式】一个不超过10000的正整数n。
+
+【输出形式】兔子总数达到n最少需要的月数
+//修正
+#include <iostream>
+using namespace std;
+int fab(int m,int n){//return num
+	int fab(1)=1,fab(2)=1,fab(3)=2;
+	if(n==1) return 0;
+	else if(n==2) return 3;
+	else return fab(m-1)+fab(m-3);
+}
+int main()
+{
+	int n;
+	int m=1;
+	cin>>n;
+	int a=1,b=1,c=2,count=0;
+	//类fbnacci
+	
+		fab(m,n);
+	
+	}
+	cout<<m;
+	return 0;
+}
