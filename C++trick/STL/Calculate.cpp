@@ -3,8 +3,6 @@ using namespace std;
 //近似计算pi/4,直到最后一项小于10^-6;
 //在需要根据值来决定是否继续循环的场合,do-while语句很合适
 //先试试直接计算,毕竟目标是解决问题.保留6位小数
-#include <bits/stdc++.h>
-using namespace std;
 int main(){
     const double pi=acos(-1.0);
     cout<<fixed<<setprecision(6)<<pi/4<<endl;//seccessful
