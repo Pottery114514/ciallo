@@ -6,16 +6,16 @@ int check(vector<int>& trees,int H){//计算结果
     int sum=0;
     for (int tree:trees){
         if (tree>H){
-            sum+=tree-H;
+            sum+=tree-H;//筛选所有高于标准的树
         }
     }
     return sum;
 }
-int Ajust(vector<int>& trees,int goal){
-    int left=0,right=trees.back();
+int adjustHeight(vector<int>& trees,int goal){//value-based binary
+    int left=0,right=trees.back();//back()指向最后一个元素
     int result=0;
     while(left<=right){
-        int mid=left+(right-left)/2;
+        int mid=left+(right-left)/2;//mid需要不断更新,定义在循环里
         int collected=check(trees,mid);
         if (collected>=goal){
             result=mid;
@@ -34,7 +34,6 @@ int main(){
         cin>>trees[i];
     }
     sort(trees.begin(),trees.end());
-    int result=Ajust(trees,goal);
-    cout<<result<<endl;
+    cout<<adjustHeight(trees,goal)<<endl;
     return 0;
 }
